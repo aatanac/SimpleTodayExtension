@@ -537,6 +537,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				DEVELOPMENT_TEAM = F8CWW9H87A;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plavaTvornica.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -552,6 +553,7 @@
 				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
 				DEVELOPMENT_TEAM = F8CWW9H87A;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plavaTvornica.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -622,6 +624,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8CWW9H87A;
 				INFOPLIST_FILE = TestTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plavaTvornica.TestApp.TestTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,6 +638,7 @@
 			buildSettings = {
 				DEVELOPMENT_TEAM = F8CWW9H87A;
 				INFOPLIST_FILE = TestTodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.plavaTvornica.TestApp.TestTodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -662,6 +666,7 @@
 				2C0251B41DDBA39000F9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C0251B51DDBA39000F9FD96 /* Build configuration list for PBXNativeTarget "TestAppTests" */ = {
 			isa = XCConfigurationList;
@@ -670,6 +675,7 @@
 				2C0251B71DDBA39000F9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C0251B81DDBA39000F9FD96 /* Build configuration list for PBXNativeTarget "TestAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +684,7 @@
 				2C0251BA1DDBA39000F9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2C0251CD1DDBA3A700F9FD96 /* Build configuration list for PBXNativeTarget "TestTodayExtension" */ = {
 			isa = XCConfigurationList;
@@ -686,6 +693,7 @@
 				2C0251CF1DDBA3A700F9FD96 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -22,7 +22,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         super.viewDidLoad()
         
         fetchData(urlString: testUrlString) { (data) in
-            self.updateUI(simpleData: DummyData(data: data))
+            guard let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]  else {
+                return
+            }
+            self.updateUI(simpleData: DummyData(jsonResponse: jsonResponse))
         }
 
         // Do any additional setup after loading the view from its nib.
@@ -33,14 +36,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
-    func hasContentToShow(hasContent:Bool) {
-        NCWidgetController.widgetController().setHasContent(hasContent, forWidgetWithBundleIdentifier: "com.plavaTvornica.TestApp.TestTodayExtension")
-    }
-    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         
         fetchData(urlString: testUrlString) { (data) in
-            self.updateUI(simpleData: DummyData(data: data))
+            guard let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]  else {
+                return
+            }
+            self.updateUI(simpleData: DummyData(jsonResponse: jsonResponse))
             completionHandler(NCUpdateResult.newData)
         }
     }
@@ -84,14 +86,11 @@ extension TodayViewController {
 
 struct DummyData {
     
-    var title = ""
-    var subTitle = ""
-    var imageUrl = ""
+    var title:String
+    var subTitle:String
+    var imageUrl:String
     
-    init(data:Data) {
-        guard let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]  else {
-            return
-        }
+    init(jsonResponse:[String: Any] ) {
         title = jsonResponse["title"] as? String ?? "No title"
         subTitle = jsonResponse["subTitle"] as? String ?? "No subtitle"
         imageUrl = jsonResponse["imageUrl"] as? String ?? ""
