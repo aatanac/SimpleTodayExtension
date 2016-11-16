@@ -20,6 +20,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         fetchData(urlString: testUrlString) { (data) in
             guard let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]  else {
@@ -36,6 +37,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func buttonOpenUrlPressed(_ sender: Any) {
+        extensionContext?.open(URL(string: "TestTodayExtension://")!, completionHandler: nil)
+    }
+    
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
         
         fetchData(urlString: testUrlString) { (data) in
@@ -45,6 +50,17 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.updateUI(simpleData: DummyData(jsonResponse: jsonResponse))
             completionHandler(NCUpdateResult.newData)
         }
+    }
+    
+    
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if (activeDisplayMode == .compact) {
+            self.preferredContentSize = maxSize
+        }
+        else {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 150)
+        }
+        self.view.layoutIfNeeded()
     }
 
     

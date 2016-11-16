@@ -18,7 +18,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="110"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="GcN-lo-r42">
@@ -30,10 +30,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="jfb-WT-u03">
-                                <rect key="frame" x="53" y="29" width="247" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="33" id="tGf-dt-htb"/>
-                                </constraints>
+                                <rect key="frame" x="53" y="29" width="247" height="47"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -44,16 +41,29 @@
                                     <constraint firstAttribute="width" constant="38" id="OUd-zu-BDt"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkb-CQ-2XE">
+                                <rect key="frame" x="189" y="75" width="115" height="27"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="DNQ-ee-NRh"/>
+                                    <constraint firstAttribute="width" constant="115" id="Ypp-Uh-b9L"/>
+                                </constraints>
+                                <state key="normal" title="Open app"/>
+                                <connections>
+                                    <action selector="buttonOpenUrlPressed:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="df0-E2-qSt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="jfb-WT-u03" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="7hI-96-H8c"/>
                             <constraint firstAttribute="trailing" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="20" symbolic="YES" id="L8K-9R-egU"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="jfb-WT-u03" secondAttribute="bottom" constant="8" id="Oa5-yO-xyI"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Rkb-CQ-2XE" secondAttribute="bottom" constant="8" id="Myx-y4-V7l"/>
+                            <constraint firstAttribute="trailing" secondItem="Rkb-CQ-2XE" secondAttribute="trailing" constant="16" id="Wlp-Uc-U7e"/>
                             <constraint firstItem="jfb-WT-u03" firstAttribute="leading" secondItem="U6m-mr-ftV" secondAttribute="trailing" constant="8" id="Zj2-3r-lXM"/>
                             <constraint firstItem="U6m-mr-ftV" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="7" id="aDX-ys-2Oi"/>
                             <constraint firstAttribute="trailing" secondItem="jfb-WT-u03" secondAttribute="trailing" constant="20" id="d2K-eP-kCb"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="U6m-mr-ftV" secondAttribute="trailing" constant="8" id="eqO-ic-BqO"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="8" symbolic="YES" id="mYS-Cv-VNx"/>
+                            <constraint firstItem="Rkb-CQ-2XE" firstAttribute="top" secondItem="jfb-WT-u03" secondAttribute="bottom" constant="-1" id="uaA-1M-D4i"/>
                             <constraint firstItem="U6m-mr-ftV" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="14" id="wqK-Bu-DSM"/>
                         </constraints>
                     </view>
@@ -62,7 +72,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="70"/>
+                    <size key="freeformSize" width="320" height="110"/>
                     <connections>
                         <outlet property="imageView" destination="U6m-mr-ftV" id="chS-Ey-AIf"/>
                         <outlet property="labelSubtitle" destination="jfb-WT-u03" id="iIc-TE-xrY"/>
